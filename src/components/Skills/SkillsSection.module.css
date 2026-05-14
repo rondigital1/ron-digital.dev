@@ -1,0 +1,21 @@
+/* Skills — a content-aware bento grid of skill groups + a wide
+   human-languages cell. Column count + per-card span are computed so
+   the grid packs tightly across every viewport. */
+.wrap {
+  background: var(--stock-2);
+  border-block: var(--border);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.bento {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 2.25rem) var(--gutter) clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 12), 1fr);
+  grid-auto-flow: row;
+  gap: clamp(0.75rem, 1.5vw, 1.1rem);
+  /* align-items: stretch (default) makes cards equal-height *per row*,
+     while each row still sizes to its own content. */
+  align-items: stretch;
+}

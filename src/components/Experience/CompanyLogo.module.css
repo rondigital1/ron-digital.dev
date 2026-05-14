@@ -1,0 +1,46 @@
+/* Company logo tile — clickable, links to the company website,
+   with a designed monogram fallback. */
+.tile {
+  width: clamp(56px, 8vw, 72px);
+  height: clamp(56px, 8vw, 72px);
+  border: var(--border);
+  background: var(--stock);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex: none;
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+a.tile:hover,
+a.tile:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-pop-accent);
+}
+
+.img {
+  width: 66%;
+  height: 66%;
+  object-fit: contain;
+}
+
+/* Monogram fallback */
+.monogram {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  letter-spacing: -0.03em;
+  color: var(--accent);
+}
+
+.independent {
+  background: var(--ink);
+  border-color: var(--ink);
+  cursor: default;
+}
+.independent .monogram {
+  color: var(--card);
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+}

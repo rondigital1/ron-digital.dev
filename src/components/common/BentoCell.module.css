@@ -1,0 +1,51 @@
+/* Shared brutalist bento cell — 2px ink border, offset pop-shadow on hover.
+   Tones: beige (default card), ink (dark), accent (bordeaux). */
+.cell {
+  position: relative;
+  border: var(--border);
+  background: var(--card);
+  color: var(--ink);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+  /* container query context so children can respond to cell width */
+  container-type: inline-size;
+}
+
+.ink {
+  background: var(--ink);
+  color: var(--stock);
+}
+
+.accent {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.beige {
+  background: var(--card);
+  color: var(--ink);
+}
+
+/* Interactive cells lift + cast an offset shadow (neo-brutalist).
+   Pointer cursor only when the cell is an actual link. */
+a.cell.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover,
+.interactive:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-pop);
+}
+
+.accent.interactive:hover,
+.accent.interactive:focus-visible {
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.ink.interactive:hover,
+.ink.interactive:focus-visible {
+  box-shadow: 6px 6px 0 var(--accent);
+}

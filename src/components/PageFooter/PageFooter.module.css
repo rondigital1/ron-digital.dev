@@ -1,0 +1,78 @@
+/* Page footer — ink band with a pseudo-barcode + imprint. */
+.footer {
+  background: var(--ink);
+  color: var(--stock);
+  border-top: var(--border);
+  padding: clamp(1.5rem, 3vw, 2rem) var(--gutter);
+}
+
+.inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: center;
+}
+
+/* Pseudo-barcode — varying bar widths/heights. */
+.barcode {
+  display: flex;
+  gap: 2px;
+  height: 44px;
+  align-items: flex-end;
+}
+.barcode i {
+  display: block;
+  width: 2px;
+  height: 100%;
+  background: var(--stock);
+}
+.barcode i:nth-child(3n) {
+  width: 3px;
+  height: 80%;
+}
+.barcode i:nth-child(5n) {
+  width: 1px;
+  height: 100%;
+}
+.barcode i:nth-child(7n) {
+  width: 4px;
+  height: 60%;
+}
+.barcode i:nth-child(11n) {
+  width: 2px;
+  height: 90%;
+}
+
+.imprint {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: var(--t-base);
+  letter-spacing: -0.01em;
+}
+.imprint em {
+  font-style: italic;
+  color: var(--accent-2);
+}
+
+.meta {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.7;
+}
+
+@media (max-width: 720px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: left;
+  }
+  .meta {
+    text-align: left;
+  }
+}

@@ -1,0 +1,57 @@
+/* Sticky top ribbon — ink bar, mono type. */
+.ribbon {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--ink);
+  color: var(--stock);
+  border-bottom: var(--border);
+  padding: 0.6rem clamp(1rem, 3vw, 2rem);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.name {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.links {
+  display: flex;
+  gap: clamp(0.5rem, 2vw, 1.25rem);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.links a {
+  color: var(--muted);
+  transition: color var(--dur) var(--ease);
+}
+
+.links a:hover {
+  color: var(--stock);
+}
+
+.meta {
+  white-space: nowrap;
+  color: var(--muted);
+  text-align: right;
+}
+
+@media (max-width: 860px) {
+  .ribbon {
+    grid-template-columns: 1fr;
+  }
+  .links {
+    display: none;
+  }
+  .meta {
+    display: none;
+  }
+}

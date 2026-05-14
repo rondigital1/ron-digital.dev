@@ -1,0 +1,186 @@
+/* Experience role card — year, company logo, role info + team banner,
+   tags, bullets, stack. */
+.card {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: clamp(0.9rem, 2vw, 1.6rem);
+  align-items: start;
+  padding-bottom: 1.1rem;
+  border-bottom: var(--border);
+}
+
+.year {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  white-space: nowrap;
+  padding-top: 0.35rem;
+}
+.year small {
+  font-size: 0.52em;
+  color: var(--muted);
+}
+
+.info {
+  min-width: 0;
+}
+.role {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--t-lg);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+.role em {
+  font-style: italic;
+  color: var(--accent);
+}
+.company {
+  border-bottom: 1.5px solid transparent;
+  transition: border-color var(--dur) var(--ease);
+}
+.company:hover {
+  border-color: var(--accent);
+}
+.sub {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-top: 0.55rem;
+}
+
+/* Team banner — emphasised */
+.team {
+  margin-top: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.75rem 0.4rem 0.6rem;
+  background: var(--accent-bg);
+  border-left: 3px solid var(--accent);
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.teamLabel {
+  color: var(--muted);
+  font-weight: 500;
+}
+.teamLabel::after {
+  content: '·';
+  margin-left: 0.55rem;
+  opacity: 0.5;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-end;
+  max-width: 18rem;
+}
+.tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border: 1.5px solid var(--ink);
+  background: var(--stock);
+}
+.tagCurrent {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+/* Bullets — 2-column, normal-flow text, absolute-positioned dot */
+.bullets {
+  margin-top: 1.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem 2.25rem;
+}
+.bullet {
+  position: relative;
+  padding-left: 1.35rem;
+  font-family: var(--display);
+  font-size: var(--t-base);
+  line-height: 1.55;
+  color: var(--ink);
+}
+.bullet::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* Stack */
+.stack {
+  margin-top: 1.3rem;
+  padding-top: 1.05rem;
+  border-top: 1px dashed var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+.stackLabel {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-right: 0.2rem;
+}
+
+@media (max-width: 760px) {
+  .head {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      'logo year'
+      'info info'
+      'tags tags';
+    gap: 0.85rem 1rem;
+  }
+  .logoCell {
+    grid-area: logo;
+  }
+  .year {
+    grid-area: year;
+    align-self: center;
+    padding-top: 0;
+  }
+  .info {
+    grid-area: info;
+  }
+  .tags {
+    grid-area: tags;
+    justify-content: flex-start;
+    max-width: none;
+  }
+  .bullets {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+}

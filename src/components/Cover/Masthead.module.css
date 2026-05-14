@@ -1,0 +1,22 @@
+/* Masthead — name set to fill the column width via pretext. */
+.wrap {
+  margin-top: clamp(0.75rem, 2vw, 1.25rem);
+  width: 100%;
+}
+
+.masthead {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 0;
+  /* font-size is supplied inline by the useFitText hook;
+     this clamp is the no-JS / pretext-unavailable fallback. */
+  font-size: clamp(2.25rem, 9vw, 6rem);
+}
+
+.nick {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}

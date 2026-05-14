@@ -1,0 +1,100 @@
+/* Contact bar — compact, high-contrast black/white buttons on an ink
+   band, plus a distinct bordeaux résumé-download CTA. */
+.bar {
+  background: var(--ink);
+  border-block: var(--border);
+  padding: clamp(1rem, 2.5vw, 1.6rem) var(--gutter);
+}
+
+.inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: stretch;
+}
+
+/* Shared compact button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.9rem;
+  border: var(--bw) solid var(--stock);
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  transition:
+    background var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translate(-2px, -2px);
+}
+
+/* Black/white contact buttons: white fill, ink text; invert on hover. */
+.contact {
+  background: var(--stock);
+  color: var(--ink);
+}
+.contact:hover,
+.contact:focus-visible {
+  background: var(--ink);
+  color: var(--stock);
+  box-shadow: 3px 3px 0 var(--stock);
+}
+
+/* Résumé CTA: bordeaux fill — the emphasised primary action. */
+.resume {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent-ink);
+  margin-left: auto;
+}
+.resume:hover,
+.resume:focus-visible {
+  background: var(--accent-ink);
+  color: var(--accent);
+  box-shadow: 3px 3px 0 var(--accent);
+}
+
+.icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: none;
+}
+
+.label {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.kicker {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.62;
+}
+.value {
+  font-size: var(--t-xs);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 720px) {
+  .inner {
+    flex-direction: column;
+  }
+  .btn {
+    justify-content: flex-start;
+  }
+  .resume {
+    margin-left: 0;
+  }
+}

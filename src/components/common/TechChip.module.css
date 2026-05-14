@@ -1,0 +1,61 @@
+/* Technology chip — real icon + label. Three sizes, tone-aware. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  border: var(--bw) solid currentColor;
+  font-family: var(--mono);
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.sm {
+  padding: 0.32em 0.6em;
+  font-size: var(--t-xs);
+}
+
+.md {
+  padding: 0.45em 0.75em;
+  font-size: var(--t-sm);
+}
+
+.icon {
+  flex: none;
+  width: 1.15em;
+  height: 1.15em;
+}
+
+/* On a beige cell: ink chip on transparent. */
+.onBeige {
+  color: var(--ink);
+  background: transparent;
+}
+.onBeige:hover {
+  background: var(--ink);
+  color: var(--card);
+}
+
+/* On an ink cell: light chip. */
+.onInk {
+  color: var(--stock);
+  background: transparent;
+}
+.onInk:hover {
+  background: var(--stock);
+  color: var(--ink);
+}
+
+/* On an accent cell: white chip. */
+.onAccent {
+  color: var(--accent-ink);
+  background: transparent;
+}
+.onAccent:hover {
+  background: var(--accent-ink);
+  color: var(--accent);
+}
+
+.chip:hover .icon {
+  transition: none;
+}

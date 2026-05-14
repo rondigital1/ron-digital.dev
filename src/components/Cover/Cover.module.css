@@ -1,0 +1,117 @@
+/* Cover — two-column editorial hero.
+   Left: meta, masthead, tagline, "now" feed.
+   Right: years card + domains bento. */
+.cover {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 2.5rem) var(--gutter) clamp(2rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: stretch;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: var(--border);
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.meta span:nth-child(2) {
+  text-align: center;
+}
+.meta span:nth-child(3) {
+  text-align: right;
+}
+
+.tagline {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: var(--t-lg);
+  line-height: 1.4;
+  color: var(--ink);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 44ch;
+}
+.tagline em {
+  font-style: italic;
+  color: var(--accent);
+}
+.tagline b {
+  font-weight: 700;
+}
+
+/* Right column */
+.right {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  min-width: 0;
+}
+
+/* Years card (a bento cell) */
+.yearsCard {
+  padding: clamp(1.25rem, 2.5vw, 1.9rem);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  align-items: end;
+}
+.yearsNum {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+}
+.yearsNum em {
+  font-style: italic;
+  color: var(--accent-2);
+}
+.yearsText {
+  display: grid;
+  gap: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.yearsLabel {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(248, 244, 235, 0.55);
+}
+.yearsDesc {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: var(--t-base);
+  line-height: 1.35;
+}
+
+@media (max-width: 1080px) {
+  .cover {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .meta {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+  .meta span:nth-child(2),
+  .meta span:nth-child(3) {
+    text-align: left;
+  }
+}

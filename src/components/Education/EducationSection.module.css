@@ -1,0 +1,49 @@
+/* Education — compact two-up bento. */
+.grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2rem) var(--gutter) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: clamp(0.75rem, 1.5vw, 1.1rem);
+}
+
+.card {
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem 1rem;
+  align-items: start;
+}
+
+.school {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--t-lg);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.degree {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-top: 0.5rem;
+}
+.degree em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.year {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--t-xl);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}

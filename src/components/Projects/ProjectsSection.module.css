@@ -1,0 +1,9 @@
+/* Projects grid — responsive 2-up / 1-up. */
+.grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2rem) var(--gutter) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}

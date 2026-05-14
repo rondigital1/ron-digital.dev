@@ -1,0 +1,114 @@
+/* Human languages — a wide bento cell with country-code tiles. */
+.card {
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.85rem;
+  align-items: center;
+  padding-bottom: 0.9rem;
+  border-bottom: var(--border);
+}
+.badge {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: grid;
+  place-items: center;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: var(--bw) solid var(--accent);
+}
+.title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--t-lg);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+.count {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 0.6rem;
+}
+
+.lang {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.7rem 0.85rem;
+  border: var(--bw) solid var(--ink);
+  background: var(--stock);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+.lang:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-pop-accent);
+  background: var(--accent-bg);
+}
+.code {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+.name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: var(--t-base);
+  line-height: 1.1;
+}
+.level {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.dots {
+  display: flex;
+  gap: 4px;
+  margin-top: 2px;
+}
+.dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rule);
+  display: block;
+}
+.dots i.on {
+  background: var(--accent);
+}

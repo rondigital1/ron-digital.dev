@@ -1,0 +1,144 @@
+/* Skill group as a bento cell — badge + title + count, then a
+   container-query-responsive grid of icon tools. */
+.card {
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.85rem;
+  align-items: center;
+  padding-bottom: 0.9rem;
+  border-bottom: var(--border);
+}
+
+.badge {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: grid;
+  place-items: center;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+  border: var(--bw) solid currentColor;
+}
+
+/* Badge fills depend on the cell tone. */
+.beige .badge {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+.ink .badge {
+  background: var(--stock);
+  color: var(--ink);
+  border-color: var(--stock);
+}
+.accent .badge {
+  background: var(--accent-ink);
+  color: var(--accent);
+  border-color: var(--accent-ink);
+}
+
+.title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--t-lg);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.count {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.62;
+  white-space: nowrap;
+}
+
+/* Tools — responsive via container query on the BentoCell. */
+.tools {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+@container (min-width: 320px) {
+  .tools {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@container (min-width: 560px) {
+  .tools {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.tool {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.55rem 0.65rem;
+  border: 1.5px solid currentColor;
+  min-width: 0;
+  transition:
+    transform var(--dur) var(--ease),
+    background var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+/* Per-skill hover highlight — inverts against the cell tone. */
+.beige .tool:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.ink .tool:hover {
+  background: var(--stock);
+  color: var(--ink);
+  border-color: var(--stock);
+  transform: translateY(-2px);
+}
+.accent .tool:hover {
+  background: var(--accent-ink);
+  color: var(--accent);
+  border-color: var(--accent-ink);
+  transform: translateY(-2px);
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  justify-self: center;
+}
+
+.toolInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.toolName {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: var(--t-xs);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.toolLevel {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}

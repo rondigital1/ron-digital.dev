@@ -1,0 +1,56 @@
+/* ============================================================
+   Design tokens — ported from direction-12-issue-refined.html
+   with the approved overrides: burgundy -> bordeaux, beige cards.
+   ============================================================ */
+:root {
+  /* Page surfaces (warm cream) */
+  --stock: #f8f4eb;
+  --stock-2: #f2ede0;
+  --stock-3: #ece5d5;
+
+  /* Card surfaces (beige — distinct from the page) */
+  --card: #e8dcc4;
+  --card-2: #e0d2b6;
+  --card-3: #d8c9a8;
+
+  /* Ink / text */
+  --ink: #141414;
+  --ink-2: #2e2a22;
+  --muted: #8b8478;
+  --rule: #d8d2c4;
+  --rule-soft: #e8e2d2;
+
+  /* Bordeaux accent (darker than the mockup's burgundy) */
+  --accent: #4a1420;
+  --accent-2: #6e2a38;
+  --accent-bg: #e9dbdc;
+  --accent-ink: #ffffff;
+
+  /* Fonts */
+  --display: 'Fraunces', 'Times New Roman', serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Brutalist border + pop shadow (bento language) */
+  --bw: 2px;
+  --border: var(--bw) solid var(--ink);
+  --shadow-pop: 4px 4px 0 var(--ink);
+  --shadow-pop-accent: 4px 4px 0 var(--accent);
+
+  /* Layout */
+  --max: 1320px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  /* Fluid type scale */
+  --t-xs: clamp(0.68rem, 0.64rem + 0.2vw, 0.75rem);
+  --t-sm: clamp(0.8rem, 0.76rem + 0.2vw, 0.88rem);
+  --t-base: clamp(0.9rem, 0.86rem + 0.2vw, 1rem);
+  --t-lg: clamp(1.05rem, 0.98rem + 0.4vw, 1.3rem);
+  --t-xl: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  --t-2xl: clamp(2rem, 1.5rem + 2.4vw, 3.4rem);
+  --t-3xl: clamp(2.5rem, 1.6rem + 4vw, 5rem);
+
+  /* Motion */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 180ms;
+}

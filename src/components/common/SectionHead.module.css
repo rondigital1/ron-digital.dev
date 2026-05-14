@@ -1,0 +1,55 @@
+/* Section header — index numeral · big editorial title · mono kicker.
+   Ported from direction-12's .section-head. */
+.head {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(1.1rem, 2vw, 1.6rem);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  align-items: baseline;
+  border-bottom: var(--border);
+}
+
+.num {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.4rem;
+}
+
+.title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--t-3xl);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.title em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.kicker {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  text-align: right;
+}
+
+@media (max-width: 560px) {
+  .head {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .kicker {
+    text-align: left;
+  }
+}
