@@ -3,7 +3,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45em;
-  border: var(--bw) solid currentColor;
+  border: 1px solid currentColor;
   font-family: var(--mono);
   font-weight: 500;
   white-space: nowrap;
@@ -29,6 +29,7 @@
 /* On a beige cell: ink chip on transparent. */
 .onBeige {
   color: var(--ink);
+  border-color: var(--line-soft);
   background: transparent;
 }
 .onBeige:hover {
@@ -39,6 +40,7 @@
 /* On an ink cell: light chip. */
 .onInk {
   color: var(--stock);
+  border-color: rgba(255, 250, 241, 0.34);
   background: transparent;
 }
 .onInk:hover {
@@ -49,6 +51,7 @@
 /* On an accent cell: white chip. */
 .onAccent {
   color: var(--accent-ink);
+  border-color: rgba(255, 250, 241, 0.38);
   background: transparent;
 }
 .onAccent:hover {

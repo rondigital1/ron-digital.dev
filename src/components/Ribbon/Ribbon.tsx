@@ -5,7 +5,7 @@ const NAV = [
   { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
-  { href: '#education', label: 'Education' },
+  { href: profile.resumePdf, label: 'Resume' },
   { href: '#contact', label: 'Contact' },
 ];
 

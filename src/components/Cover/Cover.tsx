@@ -12,9 +12,6 @@ export function Cover() {
     <section className={styles.cover} aria-label="Introduction">
       <div className={styles.left}>
         <div className={styles.meta}>
-          <span>{profile.title}</span>
-          <span>Backend · Distributed · AI</span>
-          <span>{profile.location}</span>
         </div>
 
         <Masthead />

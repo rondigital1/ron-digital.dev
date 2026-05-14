@@ -1,4 +1,4 @@
-/* Shared brutalist bento cell — 2px ink border, offset pop-shadow on hover.
+/* Shared editorial bento cell — 2px major border, offset pop-shadow on hover.
    Tones: beige (default card), ink (dark), accent (bordeaux). */
 .cell {
   position: relative;
@@ -14,8 +14,8 @@
 }
 
 .ink {
-  background: var(--ink);
-  color: var(--stock);
+  background: var(--black-panel);
+  color: var(--white);
 }
 
 .accent {

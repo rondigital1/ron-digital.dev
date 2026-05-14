@@ -1,7 +1,7 @@
 /* Page footer — ink band with a pseudo-barcode + imprint. */
 .footer {
-  background: var(--ink);
-  color: var(--stock);
+  background: var(--black-panel);
+  color: var(--white);
   border-top: var(--border);
   padding: clamp(1.5rem, 3vw, 2rem) var(--gutter);
 }
@@ -26,7 +26,7 @@
   display: block;
   width: 2px;
   height: 100%;
-  background: var(--stock);
+  background: var(--white);
 }
 .barcode i:nth-child(3n) {
   width: 3px;
@@ -61,7 +61,7 @@
   font-size: var(--t-xs);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(255, 250, 241, 0.64);
   text-align: right;
   line-height: 1.7;
 }

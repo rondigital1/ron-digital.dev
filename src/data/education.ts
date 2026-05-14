@@ -2,26 +2,32 @@
 
 export interface Education {
   id: string;
+  monogram: string;
   school: string;
   degree: string;
   field: string;
   year: string;
+  location: string;
 }
 
 export const education: Education[] = [
   {
-    id: 'brooklyn',
-    school: 'Brooklyn College, CUNY',
-    degree: 'B.S.',
-    field: 'Computer Science',
-    year: '2018',
-  },
-  {
     id: 'binghamton',
+    monogram: 'BU',
     school: 'Binghamton University, SUNY',
-    degree: 'B.A.',
+    degree: 'Bachelor of Arts in Mathematics',
     field: 'Mathematics',
     year: '2017',
+    location: 'New York',
+  },
+  {
+    id: 'brooklyn',
+    monogram: 'BC',
+    school: 'Brooklyn College, CUNY',
+    degree: 'Bachelor of Science in Computer Science',
+    field: 'Computer Science',
+    year: '2018',
+    location: 'Brooklyn, NY',
   },
 ];
 

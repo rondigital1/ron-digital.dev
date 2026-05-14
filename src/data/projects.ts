@@ -50,7 +50,9 @@ export const projects: Project[] = [
     preview: 'vault',
     urlLabel: 'conceptvault.app',
     status: 'prototype',
-    links: {},
+    links: {
+      github: 'https://github.com/rondigital1/concept-vault',
+    },
     stack: ['TypeScript', 'Next.js', 'LangGraph', 'LangChain'],
   },
   {
@@ -63,7 +65,9 @@ export const projects: Project[] = [
     preview: 'pilot',
     urlLabel: 'sessionpilot.app',
     status: 'prototype',
-    links: {},
+    links: {
+      github: 'https://github.com/rondigital1/session-pilot',
+    },
     stack: ['TypeScript', 'React', 'Node.js', 'PostgreSQL'],
   },
 ];

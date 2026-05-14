@@ -1,30 +1,51 @@
 /* ============================================================
-   Design tokens — ported from direction-12-issue-refined.html
-   with the approved overrides: burgundy -> bordeaux, beige cards.
+   Design tokens — warm editorial cream, black, and burgundy.
    ============================================================ */
 :root {
-  /* Page surfaces (warm cream) */
-  --stock: #f8f4eb;
-  --stock-2: #f2ede0;
-  --stock-3: #ece5d5;
-
-  /* Card surfaces (beige — distinct from the page) */
-  --card: #e8dcc4;
-  --card-2: #e0d2b6;
-  --card-3: #d8c9a8;
+  /* Page surfaces */
+  --bg: #f4efe6;
+  --bg-soft: #faf6ee;
 
   /* Ink / text */
-  --ink: #141414;
-  --ink-2: #2e2a22;
-  --muted: #8b8478;
-  --rule: #d8d2c4;
-  --rule-soft: #e8e2d2;
+  --ink: #151413;
+  --ink-soft: #38322c;
+  --muted: #776e65;
+  --muted-strong: #5f574f;
 
-  /* Bordeaux accent (darker than the mockup's burgundy) */
-  --accent: #4a1420;
-  --accent-2: #6e2a38;
-  --accent-bg: #e9dbdc;
-  --accent-ink: #ffffff;
+  /* Borders */
+  --line: #24201b;
+  --line-soft: rgba(36, 32, 27, 0.28);
+
+  /* Panels */
+  --panel: #eadfc9;
+  --panel-soft: #f1e8d7;
+  --panel-cream: #f8f3ea;
+
+  /* Burgundy accent */
+  --maroon: #5f1325;
+  --maroon-strong: #6f182d;
+  --maroon-soft: #f0dce1;
+
+  /* Deep panels */
+  --black-panel: #11110f;
+  --black-panel-soft: #191816;
+
+  --white: #fffaf1;
+
+  /* Legacy aliases used by the component modules */
+  --stock: var(--bg);
+  --stock-2: var(--bg-soft);
+  --stock-3: var(--panel-soft);
+  --card: var(--panel);
+  --card-2: var(--panel-soft);
+  --card-3: var(--panel-cream);
+  --ink-2: var(--ink-soft);
+  --rule: var(--line-soft);
+  --rule-soft: rgba(36, 32, 27, 0.16);
+  --accent: var(--maroon);
+  --accent-2: var(--maroon-strong);
+  --accent-bg: var(--maroon-soft);
+  --accent-ink: var(--white);
 
   /* Fonts */
   --display: 'Fraunces', 'Times New Roman', serif;
@@ -33,8 +54,9 @@
 
   /* Brutalist border + pop shadow (bento language) */
   --bw: 2px;
-  --border: var(--bw) solid var(--ink);
-  --shadow-pop: 4px 4px 0 var(--ink);
+  --border: var(--bw) solid var(--line);
+  --border-soft: 1px solid var(--line-soft);
+  --shadow-pop: 4px 4px 0 var(--line);
   --shadow-pop-accent: 4px 4px 0 var(--accent);
 
   /* Layout */

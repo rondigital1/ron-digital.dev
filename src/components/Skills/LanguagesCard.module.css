@@ -12,7 +12,7 @@
   gap: 0.85rem;
   align-items: center;
   padding-bottom: 0.9rem;
-  border-bottom: var(--border);
+  border-bottom: var(--border-soft);
 }
 .badge {
   width: 2.6rem;
@@ -56,32 +56,30 @@
   gap: 0.85rem;
   align-items: center;
   padding: 0.7rem 0.85rem;
-  border: var(--bw) solid var(--ink);
+  border: 1px solid var(--line-soft);
   background: var(--stock);
   transition:
     transform var(--dur) var(--ease),
     box-shadow var(--dur) var(--ease);
 }
 
-/* National flag — revealed on hover, no tint or overlay.
-   `contain` keeps the whole flag visible (no zoom/crop). */
-.lang::before {
-  content: '';
+.flag {
   position: absolute;
   inset: 0;
-  background-image: var(--flag);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   opacity: 0;
   transition: opacity var(--dur) var(--ease);
+  pointer-events: none;
   z-index: 0;
 }
 .lang:hover {
   transform: translate(-2px, -2px);
   box-shadow: var(--shadow-pop-accent);
 }
-.lang:hover::before {
+.lang:hover .flag {
   opacity: 1;
 }
 

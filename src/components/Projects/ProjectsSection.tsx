@@ -3,16 +3,16 @@ import { SectionHead } from '../common/SectionHead';
 import { ProjectCard } from './ProjectCard';
 import styles from './ProjectsSection.module.css';
 
-/** Personal projects — three 0-to-1 full-stack AI prototypes. */
+/** Independent product builds — three active full-stack AI projects. */
 export function ProjectsSection() {
   return (
-    <section aria-label="Personal projects">
+    <section aria-label="Independent product builds">
       <SectionHead
         id="projects"
         num="01"
-        title="Personal"
-        titleEmphasis="projects"
-        kicker="0-to-1 AI builds · click to open"
+        title="Independent product"
+        titleEmphasis="builds"
+        kicker="3 active builds · live demos + source"
       />
       <div className={styles.grid}>
         {projects.map((project) => (

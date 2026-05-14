@@ -2,7 +2,7 @@
    Each kind hints at the product without claiming a real UI. */
 .preview {
   height: clamp(170px, 22vw, 240px);
-  border-bottom: var(--border);
+  border-bottom: var(--border-soft);
   overflow: hidden;
   position: relative;
 }
@@ -16,8 +16,8 @@
 
 /* ============ ATLAS — AI itinerary flow ============ */
 .atlas {
-  background: #161013;
-  color: #e8dcc4;
+  background: var(--black-panel-soft);
+  color: var(--panel);
   padding: 1.1rem 1.25rem;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@
   font-size: 0.62rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(232, 220, 196, 0.55);
+  color: rgba(255, 250, 241, 0.62);
 }
 .atlasFlow {
   flex: 1;
@@ -58,18 +58,18 @@
 .track {
   height: 7px;
   border-radius: 3px;
-  background: rgba(232, 220, 196, 0.22);
+  background: rgba(255, 250, 241, 0.18);
 }
 .step:nth-child(1) .track {
   width: 78%;
 }
 .step:nth-child(2) .track {
   width: 56%;
-  background: rgba(232, 220, 196, 0.4);
+  background: rgba(255, 250, 241, 0.34);
 }
 .step:nth-child(3) .track {
   width: 67%;
-  background: rgba(232, 220, 196, 0.4);
+  background: rgba(255, 250, 241, 0.34);
 }
 .step:nth-child(4) .track {
   width: 44%;
@@ -77,7 +77,7 @@
 
 /* ============ VAULT — research distillation cards ============ */
 .vault {
-  background: #fbf8f1;
+  background: var(--panel-cream);
   padding: 1.1rem;
   display: grid;
   grid-template-columns: 84px 1fr;
@@ -85,7 +85,7 @@
 }
 .vaultSide {
   background: var(--card);
-  border: var(--bw) solid var(--rule);
+  border: 1px solid var(--line-soft);
   border-radius: 3px;
   padding: 0.7rem 0.55rem;
   display: flex;
@@ -110,8 +110,8 @@
   align-content: start;
 }
 .flashcard {
-  background: #fff;
-  border: var(--bw) solid var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line-soft);
   border-radius: 3px;
   padding: 0.6rem;
   display: flex;
@@ -144,12 +144,12 @@
 
 /* ============ PILOT — session / task planner board ============ */
 .pilot {
-  background: #f4f1ea;
+  background: var(--panel-cream);
   display: grid;
   grid-template-rows: 34px 1fr;
 }
 .pilotTop {
-  background: var(--ink);
+  background: var(--black-panel);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -166,7 +166,7 @@
   font-size: 0.6rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(248, 244, 235, 0.7);
+  color: rgba(255, 250, 241, 0.72);
 }
 .pilotTop .cta {
   margin-left: auto;
@@ -186,8 +186,8 @@
   align-content: start;
 }
 .pilotCol {
-  background: #fff;
-  border: var(--bw) solid var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line-soft);
   border-radius: 3px;
   padding: 0.6rem;
   display: flex;
@@ -214,4 +214,70 @@
 }
 .pilotCol .l.short {
   width: 58%;
+}
+
+@container (max-width: 30rem) {
+  .preview {
+    height: clamp(150px, 46vw, 190px);
+  }
+
+  .atlas {
+    padding: 0.9rem;
+  }
+
+  .vault {
+    grid-template-columns: minmax(58px, 0.38fr) 1fr;
+    gap: 0.65rem;
+    padding: 0.85rem;
+  }
+
+  .vaultSide {
+    padding: 0.6rem 0.45rem;
+  }
+
+  .vaultMain {
+    gap: 0.45rem;
+  }
+
+  .flashcard {
+    padding: 0.5rem;
+    min-height: 54px;
+  }
+
+  .pilotBody {
+    grid-template-columns: repeat(3, minmax(72px, 1fr));
+    gap: 0.45rem;
+    overflow: hidden;
+  }
+
+  .pilotCol {
+    padding: 0.5rem;
+  }
+
+  .pilotCol .stat {
+    font-size: 1.35rem;
+  }
+}
+
+@container (max-width: 23rem) {
+  .preview {
+    height: 145px;
+  }
+
+  .vault {
+    grid-template-columns: 1fr;
+  }
+
+  .vaultSide {
+    display: none;
+  }
+
+  .pilotTop .cta {
+    display: none;
+  }
+
+  .pilotBody {
+    grid-template-columns: repeat(3, minmax(64px, 1fr));
+    padding: 0.7rem;
+  }
 }

@@ -15,11 +15,8 @@ export function LanguagesCard({ style }: { style?: CSSProperties }) {
 
       <div className={styles.grid}>
         {humanLanguages.map((lang) => (
-          <div
-            className={styles.lang}
-            key={lang.code}
-            style={{ ['--flag' as string]: `url(${lang.flag})` }}
-          >
+          <div className={styles.lang} key={lang.code}>
+            <img className={styles.flag} src={lang.flag} alt="" aria-hidden="true" loading="lazy" />
             <span className={styles.code}>{lang.code}</span>
             <span className={styles.info}>
               <span className={styles.name}>{lang.name}</span>

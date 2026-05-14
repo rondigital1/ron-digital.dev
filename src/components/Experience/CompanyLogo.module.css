@@ -3,7 +3,7 @@
 .tile {
   width: clamp(56px, 8vw, 72px);
   height: clamp(56px, 8vw, 72px);
-  border: var(--border);
+  border: 1px solid var(--line-soft);
   background: var(--stock);
   display: grid;
   place-items: center;
@@ -21,9 +21,10 @@ a.tile:focus-visible {
 }
 
 .img {
-  width: 66%;
-  height: 66%;
-  object-fit: contain;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Monogram fallback */
@@ -36,8 +37,8 @@ a.tile:focus-visible {
 }
 
 .independent {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--black-panel);
+  border-color: var(--black-panel);
   cursor: default;
 }
 .independent .monogram {

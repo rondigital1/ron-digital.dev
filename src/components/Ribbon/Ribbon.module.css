@@ -3,8 +3,8 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--ink);
-  color: var(--stock);
+  background: var(--black-panel);
+  color: var(--white);
   border-bottom: var(--border);
   padding: 0.6rem clamp(1rem, 3vw, 2rem);
   display: grid;
@@ -27,29 +27,39 @@
   gap: clamp(0.5rem, 2vw, 1.25rem);
   justify-content: center;
   flex-wrap: wrap;
+  min-width: 0;
 }
 
 .links a {
-  color: var(--muted);
+  color: rgba(255, 250, 241, 0.72);
   transition: color var(--dur) var(--ease);
+  white-space: nowrap;
 }
 
 .links a:hover {
-  color: var(--stock);
+  color: var(--white);
 }
 
 .meta {
   white-space: nowrap;
-  color: var(--muted);
+  color: rgba(255, 250, 241, 0.62);
   text-align: right;
 }
 
 @media (max-width: 860px) {
   .ribbon {
     grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 0.45rem;
+    padding-inline: clamp(0.75rem, 4vw, 1rem);
+  }
+  .name {
+    text-align: center;
   }
   .links {
-    display: none;
+    max-width: 100%;
+    row-gap: 0.35rem;
+    justify-content: center;
   }
   .meta {
     display: none;

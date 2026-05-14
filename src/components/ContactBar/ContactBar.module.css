@@ -1,7 +1,7 @@
 /* Contact bar — compact, high-contrast black/white buttons on an ink
    band, plus a distinct bordeaux résumé-download CTA. */
 .bar {
-  background: var(--ink);
+  background: var(--black-panel);
   border-block: var(--border);
   padding: clamp(1rem, 2.5vw, 1.6rem) var(--gutter);
 }
@@ -21,7 +21,7 @@
   align-items: center;
   gap: 0.55rem;
   padding: 0.55rem 0.9rem;
-  border: var(--bw) solid var(--stock);
+  border: var(--bw) solid var(--white);
   font-family: var(--mono);
   font-size: var(--t-xs);
   font-weight: 600;
@@ -41,14 +41,14 @@
 
 /* Black/white contact buttons: white fill, ink text; invert on hover. */
 .contact {
-  background: var(--stock);
+  background: var(--white);
   color: var(--ink);
 }
 .contact:hover,
 .contact:focus-visible {
-  background: var(--ink);
-  color: var(--stock);
-  box-shadow: 3px 3px 0 var(--stock);
+  background: var(--black-panel);
+  color: var(--white);
+  box-shadow: 3px 3px 0 var(--white);
 }
 
 /* Résumé CTA: bordeaux fill — the emphasised primary action. */

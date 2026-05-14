@@ -33,8 +33,8 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(ellipse at top left, rgba(180, 160, 120, 0.05), transparent 60%),
-    radial-gradient(ellipse at bottom right, rgba(180, 160, 120, 0.04), transparent 60%);
+    radial-gradient(ellipse at top left, rgba(95, 19, 37, 0.035), transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(36, 32, 27, 0.035), transparent 60%);
 }
 
 #root {

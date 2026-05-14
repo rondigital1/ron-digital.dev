@@ -2,7 +2,7 @@
 .module {
   margin-top: clamp(2rem, 4vw, 3rem);
   padding-top: 1.5rem;
-  border-top: var(--border);
+  border-top: var(--border-soft);
 }
 
 .head {
@@ -26,7 +26,7 @@
   height: 9px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(74, 20, 32, 0.18);
+  box-shadow: 0 0 0 4px rgba(95, 19, 37, 0.18);
   animation: pulse 2.2s var(--ease) infinite;
   flex-shrink: 0;
 }
@@ -34,10 +34,10 @@
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 4px rgba(74, 20, 32, 0.18);
+    box-shadow: 0 0 0 4px rgba(95, 19, 37, 0.18);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(74, 20, 32, 0.04);
+    box-shadow: 0 0 0 10px rgba(95, 19, 37, 0.04);
   }
 }
 
@@ -59,13 +59,13 @@
   gap: 1rem;
   align-items: baseline;
   padding: 0.85rem 0;
-  border-top: 1px solid var(--rule);
+  border-top: var(--border-soft);
 }
 .item:first-child {
   border-top: 0;
 }
 .item:last-child {
-  border-bottom: 1px solid var(--rule);
+  border-bottom: var(--border-soft);
 }
 
 .itemTarget .num {

@@ -1,8 +1,18 @@
-import type { Role } from '../../data';
+import type { ExperienceBullet, Role } from '../../data';
 import { BentoCell } from '../common/BentoCell';
 import { TechChip } from '../common/TechChip';
 import { CompanyLogo } from './CompanyLogo';
 import styles from './RoleCard.module.css';
+
+function renderBullet(bullet: ExperienceBullet) {
+  return bullet.map((segment, index) =>
+    segment.strong ? (
+      <strong key={`${segment.text}-${index}`}>{segment.text}</strong>
+    ) : (
+      <span key={`${segment.text}-${index}`}>{segment.text}</span>
+    ),
+  );
+}
 
 /** A single experience entry — role head with logo + team banner,
     horizontal bullets, and a stack row. */
@@ -76,10 +86,34 @@ export function RoleCard({ role }: { role: Role }) {
       <ul className={styles.bullets}>
         {role.bullets.map((bullet, i) => (
           <li className={styles.bullet} key={i}>
-            {bullet}
+            {renderBullet(bullet)}
           </li>
         ))}
       </ul>
+
+      {role.impactMetrics?.length ? (
+        <div className={styles.metrics} aria-label={`${role.companyShort} impact metrics`}>
+          {role.impactMetrics.map((metric) => (
+            <div className={styles.metric} key={`${metric.value}-${metric.label}`}>
+              <span className={styles.metricValue}>{metric.value}</span>
+              <span className={styles.metricLabel}>{metric.label}</span>
+              {metric.context ? (
+                <span className={styles.metricContext}>{metric.context}</span>
+              ) : null}
+            </div>
+          ))}
+        </div>
+      ) : null}
+
+      {role.proofChips?.length ? (
+        <div className={styles.proofChips} aria-label={`${role.companyShort} proof points`}>
+          {role.proofChips.map((chip) => (
+            <span className={styles.proofChip} key={chip}>
+              {chip}
+            </span>
+          ))}
+        </div>
+      ) : null}
 
       <div className={styles.stack}>
         <span className={styles.stackLabel}>Stack</span>
