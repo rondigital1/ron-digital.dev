@@ -10,6 +10,10 @@ export function RoleCard({ role }: { role: Role }) {
   const roleHead = role.role.slice(0, role.role.lastIndexOf(role.roleEmphasis));
   const hasRoleEmphasis = role.roleEmphasis && roleHead !== role.role;
 
+  // Pull the month off "Jul 2023" / "Present" for the line under each year.
+  const monthStart = role.start.split(' ')[0];
+  const monthEnd = role.end.toLowerCase() === 'present' ? 'now' : role.end.split(' ')[0];
+
   return (
     <BentoCell as="article" tone="beige" interactive className={styles.card}>
       <header className={styles.head}>
@@ -18,8 +22,12 @@ export function RoleCard({ role }: { role: Role }) {
         </span>
 
         <span className={styles.year}>
-          {role.yearStart}
-          <small> — {role.yearEnd}</small>
+          <span className={styles.yPart}>{role.yearStart}</span>
+          <span className={styles.dash}>—</span>
+          <span className={styles.yPart}>{role.yearEnd}</span>
+          <span className={styles.mPart}>{monthStart}</span>
+          <span className={styles.mDash} aria-hidden />
+          <span className={styles.mPart}>{monthEnd}</span>
         </span>
 
         <div className={styles.info}>

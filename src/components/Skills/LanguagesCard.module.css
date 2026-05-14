@@ -49,6 +49,8 @@
 }
 
 .lang {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 2.75rem 1fr;
   gap: 0.85rem;
@@ -58,15 +60,34 @@
   background: var(--stock);
   transition:
     transform var(--dur) var(--ease),
-    box-shadow var(--dur) var(--ease),
-    background var(--dur) var(--ease);
+    box-shadow var(--dur) var(--ease);
+}
+
+/* National flag — revealed on hover, no tint or overlay.
+   `contain` keeps the whole flag visible (no zoom/crop). */
+.lang::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--flag);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+  z-index: 0;
 }
 .lang:hover {
   transform: translate(-2px, -2px);
   box-shadow: var(--shadow-pop-accent);
-  background: var(--accent-bg);
 }
+.lang:hover::before {
+  opacity: 1;
+}
+
 .code {
+  position: relative;
+  z-index: 1;
   width: 2.75rem;
   height: 2.75rem;
   display: grid;
@@ -79,10 +100,25 @@
   letter-spacing: 0.04em;
 }
 .info {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
   min-width: 0;
+}
+
+/* Keep the label legible over the flag — a soft white halo, no overlay. */
+.lang:hover .name {
+  text-shadow:
+    0 1px 3px rgba(255, 255, 255, 0.95),
+    0 0 10px rgba(255, 255, 255, 0.8);
+}
+.lang:hover .level {
+  color: var(--ink);
+  text-shadow:
+    0 1px 3px rgba(255, 255, 255, 0.95),
+    0 0 8px rgba(255, 255, 255, 0.8);
 }
 .name {
   font-family: var(--display);
@@ -108,7 +144,15 @@
   border-radius: 50%;
   background: var(--rule);
   display: block;
+  transition: box-shadow var(--dur) var(--ease);
 }
 .dots i.on {
   background: var(--accent);
+}
+/* Keep dots readable over the flag. */
+.lang:hover .dots i {
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.9);
+}
+.lang:hover .dots i.on {
+  background: var(--ink);
 }

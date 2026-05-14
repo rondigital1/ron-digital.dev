@@ -18,6 +18,8 @@ export interface SkillGroup {
   weight: 'sm' | 'md' | 'lg';
   /** Cell treatment. */
   tone: 'beige' | 'ink' | 'accent';
+  /** Contextual label shown in the card header instead of a raw item count. */
+  countLabel: string;
   items: SkillItem[];
 }
 
@@ -28,6 +30,7 @@ export const skillGroups: SkillGroup[] = [
     badge: 'L',
     weight: 'sm',
     tone: 'beige',
+    countLabel: 'Primary Toolkit',
     items: [
       { name: 'TypeScript', level: 'Primary' },
       { name: 'JavaScript', level: 'Primary' },
@@ -41,6 +44,7 @@ export const skillGroups: SkillGroup[] = [
     badge: 'B',
     weight: 'lg',
     tone: 'ink',
+    countLabel: 'Production',
     items: [
       { name: 'Node.js', level: 'Primary' },
       { name: 'NestJS', level: 'Primary' },
@@ -58,6 +62,7 @@ export const skillGroups: SkillGroup[] = [
     badge: 'AI',
     weight: 'lg',
     tone: 'accent',
+    countLabel: 'Daily Drivers',
     items: [
       { name: 'LangChain', level: 'Primary' },
       { name: 'LangGraph', level: 'Primary' },
@@ -74,6 +79,7 @@ export const skillGroups: SkillGroup[] = [
     badge: 'C',
     weight: 'lg',
     tone: 'beige',
+    countLabel: 'Production',
     items: [
       { name: 'AWS Lambda', level: 'Primary' },
       { name: 'AWS SQS', level: 'Primary' },
@@ -95,6 +101,7 @@ export const skillGroups: SkillGroup[] = [
     badge: 'D',
     weight: 'md',
     tone: 'beige',
+    countLabel: 'Working Knowledge',
     items: [
       { name: 'PostgreSQL', level: 'Primary' },
       { name: 'MySQL', level: 'Working' },
@@ -109,6 +116,7 @@ export const skillGroups: SkillGroup[] = [
     badge: 'FE',
     weight: 'sm',
     tone: 'ink',
+    countLabel: 'Daily Drivers',
     items: [
       { name: 'React', level: 'Primary' },
       { name: 'Next.js', level: 'Primary' },
@@ -120,6 +128,7 @@ export const skillGroups: SkillGroup[] = [
     badge: 'T',
     weight: 'md',
     tone: 'beige',
+    countLabel: 'Production',
     items: [
       { name: 'Vitest', level: 'Primary' },
       { name: 'Jest', level: 'Primary' },
@@ -139,11 +148,13 @@ export interface HumanLanguage {
   level: string;
   /** Proficiency dots filled, out of 5. */
   dots: number;
+  /** Path to the national flag SVG, revealed on hover. */
+  flag: string;
 }
 
 export const humanLanguages: HumanLanguage[] = [
-  { code: 'EN', name: 'English', level: 'Native', dots: 5 },
-  { code: 'HE', name: 'Hebrew', level: 'Native', dots: 5 },
-  { code: 'ES', name: 'Spanish', level: 'Professional', dots: 4 },
-  { code: 'RU', name: 'Russian', level: 'Conversational', dots: 3 },
+  { code: 'EN', name: 'English', level: 'Native', dots: 5, flag: '/flags/us.svg' },
+  { code: 'HE', name: 'Hebrew', level: 'Native', dots: 5, flag: '/flags/il.svg' },
+  { code: 'ES', name: 'Spanish', level: 'Professional', dots: 4, flag: '/flags/es.svg' },
+  { code: 'RU', name: 'Russian', level: 'Conversational', dots: 3, flag: '/flags/ru.svg' },
 ];

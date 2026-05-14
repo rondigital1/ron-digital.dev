@@ -9,6 +9,7 @@ export interface ContactLink {
 
 export interface Domain {
   label: string;
+  sub: string;
   /** Visual weight in the bento grid. */
   weight: 'sm' | 'md' | 'lg';
   /** Cell treatment. */
@@ -62,12 +63,10 @@ export const contactLinks: ContactLink[] = [
 
 /** Domains shown in the cover bento grid. */
 export const domains: Domain[] = [
-  { label: 'Backend Systems', weight: 'lg', tone: 'ink' },
-  { label: 'Distributed Systems', weight: 'md', tone: 'beige' },
-  { label: 'Fintech', weight: 'md', tone: 'accent' },
-  { label: 'Payments & Ledger', weight: 'lg', tone: 'beige' },
-  { label: 'Event-Driven', weight: 'sm', tone: 'beige' },
-  { label: 'Serverless', weight: 'sm', tone: 'ink' },
-  { label: 'AI-Native', weight: 'md', tone: 'accent' },
-  { label: 'Secure Messaging', weight: 'md', tone: 'beige' },
+  { label: 'Backend Systems', sub: 'APIs, services, background jobs', weight: 'lg', tone: 'ink' },
+  { label: 'Distributed Systems', sub: 'Queues, retries, failure modes', weight: 'md', tone: 'beige' },
+  { label: 'Payments & Ledger', sub: 'Reconciliation, refunds, money movement', weight: 'lg', tone: 'beige' },
+  { label: 'AI Product Engineering', sub: 'Agents, structured outputs, orchestration', weight: 'md', tone: 'accent' },
+  { label: 'Event-Driven Architecture', sub: 'Lambda, SQS, SNS, EventBridge', weight: 'md', tone: 'beige' },
+  { label: 'Secure Messaging', sub: 'Real-time systems, delivery, reliability', weight: 'md', tone: 'ink' },
 ];

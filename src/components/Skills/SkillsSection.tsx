@@ -8,7 +8,7 @@ import styles from './SkillsSection.module.css';
 /* Deliberate column spans that tile cleanly to 12 per row:
    row 1 — languages(4) + backend(8)
    row 2 — ai(6) + cloud(6)
-   row 3 — data(6) + frontend(6)
+   row 3 — data(8) + frontend(4)  ← frontend is compact (2 items)
    row 4 — delivery(12)
    …then human languages spans the full width. */
 const SPAN_12: Record<string, number> = {
@@ -16,8 +16,8 @@ const SPAN_12: Record<string, number> = {
   backend: 8,
   ai: 6,
   cloud: 6,
-  data: 6,
-  frontend: 6,
+  data: 8,
+  frontend: 4,
   delivery: 12,
 };
 

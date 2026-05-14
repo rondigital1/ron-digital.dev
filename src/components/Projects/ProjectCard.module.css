@@ -56,6 +56,12 @@
   color: var(--muted);
   white-space: nowrap;
 }
+.status[data-status='live'] {
+  color: var(--accent);
+}
+.status[data-status='building'] {
+  color: var(--ink-2);
+}
 
 /* Body */
 .body {
@@ -96,7 +102,7 @@
   border-top: 1px solid var(--rule);
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.5rem 0.75rem;
   align-items: center;
 }
 .stack {
@@ -104,18 +110,38 @@
   flex-wrap: wrap;
   gap: 0.4rem;
 }
-.visit {
+
+/* Action links */
+.actions {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.actionLink {
   font-family: var(--mono);
   font-size: var(--t-xs);
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
-  border-bottom: var(--bw) solid var(--accent);
+  text-decoration: none;
+  color: var(--muted);
+  border-bottom: 1.5px solid transparent;
   padding-bottom: 2px;
   white-space: nowrap;
+  transition:
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
 }
-.card:hover .visit {
+.actionLink[data-variant='primary'] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.actionLink:hover {
   color: var(--ink);
   border-color: var(--ink);
+}
+.actionLink:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }

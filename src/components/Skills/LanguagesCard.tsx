@@ -15,7 +15,11 @@ export function LanguagesCard({ style }: { style?: CSSProperties }) {
 
       <div className={styles.grid}>
         {humanLanguages.map((lang) => (
-          <div className={styles.lang} key={lang.code}>
+          <div
+            className={styles.lang}
+            key={lang.code}
+            style={{ ['--flag' as string]: `url(${lang.flag})` }}
+          >
             <span className={styles.code}>{lang.code}</span>
             <span className={styles.info}>
               <span className={styles.name}>{lang.name}</span>

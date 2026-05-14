@@ -15,19 +15,40 @@
   border-bottom: var(--border);
 }
 
+/* Year range with the month sitting under each year. */
 .year {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  align-items: baseline;
+  justify-items: center;
+  column-gap: 0.4rem;
+  row-gap: 0.15rem;
+  white-space: nowrap;
+  padding-top: 0.35rem;
+}
+.yPart {
   font-family: var(--display);
   font-weight: 700;
   font-size: clamp(1.4rem, 2.4vw, 2rem);
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--accent);
-  white-space: nowrap;
-  padding-top: 0.35rem;
 }
-.year small {
-  font-size: 0.52em;
+.dash {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
   color: var(--muted);
+}
+.mPart {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.mDash {
+  width: 0;
 }
 
 .info {

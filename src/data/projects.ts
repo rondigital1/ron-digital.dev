@@ -1,8 +1,11 @@
-/* Personal projects — sourced from the résumé.
-   Three 0-to-1 full-stack AI product prototypes.
-   `url` values are placeholders until Ron provides real links. */
-
 export type PreviewKind = 'atlas' | 'vault' | 'pilot';
+export type ProjectStatus = 'live' | 'prototype' | 'building' | 'paused';
+
+export interface ProjectLinks {
+  live?: string;
+  github?: string;
+  caseStudy?: string;
+}
 
 export interface Project {
   id: string;
@@ -14,9 +17,9 @@ export interface Project {
   preview: PreviewKind;
   /** Stylized browser-chrome URL label. */
   urlLabel: string;
-  status: string;
-  /** Real outbound link — placeholder until provided. */
-  url: string;
+  status: ProjectStatus;
+  updatedAt?: string;
+  links: ProjectLinks;
   /** Canonical tech names — resolved to icons via lib/icons. */
   stack: string[];
 }
@@ -32,7 +35,9 @@ export const projects: Project[] = [
     preview: 'atlas',
     urlLabel: 'atlas-graph.vercel.app',
     status: 'live',
-    url: 'https://atlas-graph.vercel.app/',
+    links: {
+      live: 'https://atlas-graph.vercel.app/',
+    },
     stack: ['TypeScript', 'Next.js', 'LangGraph', 'PostgreSQL'],
   },
   {
@@ -45,7 +50,7 @@ export const projects: Project[] = [
     preview: 'vault',
     urlLabel: 'conceptvault.app',
     status: 'prototype',
-    url: '#',
+    links: {},
     stack: ['TypeScript', 'Next.js', 'LangGraph', 'LangChain'],
   },
   {
@@ -58,7 +63,7 @@ export const projects: Project[] = [
     preview: 'pilot',
     urlLabel: 'sessionpilot.app',
     status: 'prototype',
-    url: '#',
+    links: {},
     stack: ['TypeScript', 'React', 'Node.js', 'PostgreSQL'],
   },
 ];

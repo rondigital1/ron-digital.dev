@@ -22,7 +22,7 @@ export function SkillBentoCard({ group, style }: SkillBentoCardProps) {
       <div className={styles.head}>
         <span className={styles.badge}>{group.badge}</span>
         <h3 className={styles.title}>{group.title}</h3>
-        <span className={styles.count}>{group.items.length} tools</span>
+        <span className={styles.count}>{group.countLabel}</span>
       </div>
 
       <div className={styles.tools}>

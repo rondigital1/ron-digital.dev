@@ -3,7 +3,8 @@ import { SectionHead } from '../common/SectionHead';
 import { BentoCell } from '../common/BentoCell';
 import styles from './EducationSection.module.css';
 
-/** Education — two degrees, compact bento. */
+/** Education — two degrees, compact bento. The degree field is the
+    emphasised element; cards shrink slightly on hover. */
 export function EducationSection() {
   return (
     <section aria-label="Education">
@@ -17,13 +18,12 @@ export function EducationSection() {
       <div className={styles.grid}>
         {education.map((entry) => (
           <BentoCell key={entry.id} tone="beige" className={styles.card}>
-            <div>
-              <h3 className={styles.school}>{entry.school}</h3>
-              <div className={styles.degree}>
-                <em>{entry.degree}</em> {entry.field}
-              </div>
+            <div className={styles.top}>
+              <span className={styles.degree}>{entry.degree}</span>
+              <span className={styles.year}>{entry.year}</span>
             </div>
-            <span className={styles.year}>{entry.year}</span>
+            <h3 className={styles.field}>{entry.field}</h3>
+            <div className={styles.school}>{entry.school}</div>
           </BentoCell>
         ))}
       </div>

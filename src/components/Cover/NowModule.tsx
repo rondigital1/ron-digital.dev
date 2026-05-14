@@ -1,36 +1,56 @@
-import { nowItems } from '../../data';
 import styles from './NowModule.module.css';
 
-/** "Currently building" feed — the three active prototypes. */
+const roleFitRows = [
+  {
+    num: '01',
+    title: 'Backend-heavy product engineering',
+    desc: 'Node/TypeScript services, APIs, background jobs, ledgers, and data workflows.',
+    isTarget: false,
+  },
+  {
+    num: '02',
+    title: 'Distributed systems & reliability',
+    desc: 'Queues, retries, failure modes, observability, and production ownership.',
+    isTarget: false,
+  },
+  {
+    num: '03',
+    title: 'AI-native application engineering',
+    desc: 'LangGraph/LangChain workflows, MCP, structured outputs, and agent handoffs.',
+    isTarget: false,
+  },
+  {
+    num: '04',
+    title: 'Looking for',
+    desc: 'Senior SWE / AI Product Engineer roles on small, high-ownership product teams.',
+    isTarget: true,
+  },
+];
+
 export function NowModule() {
   return (
-    <section className={styles.module} aria-label="Currently building">
+    <section className={styles.module} aria-label="Role fit">
       <div className={styles.head}>
         <span className={styles.live}>
           <span className={styles.dot} aria-hidden />
-          Now
+          Now · Role Fit
         </span>
-        <span className={styles.sub}>Currently building</span>
       </div>
+      <p className={styles.intro}>What I'm strongest at — and where I'm aiming next.</p>
 
       <div className={styles.list}>
-        {nowItems.map((item) => (
-          <a key={item.num} className={styles.item} href={`#project-${item.projectId}`}>
-            <span className={styles.num}>{item.num}</span>
+        {roleFitRows.map((row) => (
+          <div
+            key={row.num}
+            className={`${styles.item}${row.isTarget ? ` ${styles.itemTarget}` : ''}`}
+          >
+            <span className={styles.num}>{row.num}</span>
             <span className={styles.body}>
-              <span className={styles.itemTitle}>
-                {item.name.replace(item.nameEmphasis, '')}
-                <em>{item.nameEmphasis}</em>
-              </span>
-              <span className={styles.desc}>{item.description}</span>
+              <span className={styles.itemTitle}>{row.title}</span>
+              <span className={styles.desc}>{row.desc}</span>
             </span>
-            <span className={styles.stamp}>{item.stamp}</span>
-          </a>
+          </div>
         ))}
-      </div>
-
-      <div className={styles.foot}>
-        <a href="#projects">All projects →</a>
       </div>
     </section>
   );

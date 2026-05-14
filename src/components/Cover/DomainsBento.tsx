@@ -41,7 +41,10 @@ export function DomainsBento() {
             }}
           >
             <span className={styles.index}>{String(i + 1).padStart(2, '0')}</span>
-            <span className={styles.name}>{domain.label}</span>
+            <span className={styles.nameGroup}>
+              <span className={styles.name}>{domain.label}</span>
+              <span className={styles.sub}>{domain.sub}</span>
+            </span>
           </BentoCell>
         ))}
       </div>
