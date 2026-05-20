@@ -62,16 +62,17 @@
 .yearsCard {
   padding: clamp(1.25rem, 2.5vw, 1.9rem);
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.25rem;
-  align-items: end;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(0.75rem, 2.5cqw, 1.25rem);
+  align-items: center;
 }
 .yearsNum {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-size: clamp(3rem, 16cqw, 5.5rem);
   line-height: 0.82;
   letter-spacing: -0.04em;
+  min-width: 0;
 }
 .yearsNum em {
   font-style: italic;
@@ -80,7 +81,8 @@
 .yearsText {
   display: grid;
   gap: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0;
+  min-width: 0;
 }
 .yearsLabel {
   font-family: var(--mono);
@@ -92,7 +94,7 @@
 .yearsDesc {
   font-family: var(--display);
   font-style: italic;
-  font-size: var(--t-base);
+  font-size: clamp(0.9rem, 3.2cqw, 1rem);
   line-height: 1.35;
 }
 
@@ -109,5 +111,24 @@
   }
   .meta span:nth-child(2) {
     text-align: left;
+  }
+
+  .yearsCard {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 0.65rem;
+    padding: 1rem;
+  }
+
+  .yearsNum {
+    font-size: clamp(3rem, 26cqw, 4.35rem);
+  }
+
+  .yearsText {
+    gap: 0.3rem;
+  }
+
+  .yearsLabel {
+    letter-spacing: 0.12em;
   }
 }

@@ -2,6 +2,7 @@ import type { ExperienceBullet, Role } from '../../data';
 import { BentoCell } from '../common/BentoCell';
 import { TechChip } from '../common/TechChip';
 import { CompanyLogo } from './CompanyLogo';
+import { RoleMetaLine } from './RoleMetaLine';
 import styles from './RoleCard.module.css';
 
 function renderBullet(bullet: ExperienceBullet) {
@@ -14,7 +15,7 @@ function renderBullet(bullet: ExperienceBullet) {
   );
 }
 
-/** A single experience entry — role head with logo + team banner,
+/** A single experience entry — role head with logo + metadata line,
     horizontal bullets, and a stack row. */
 export function RoleCard({ role }: { role: Role }) {
   const roleHead = role.role.slice(0, role.role.lastIndexOf(role.roleEmphasis));
@@ -65,10 +66,7 @@ export function RoleCard({ role }: { role: Role }) {
             )}
           </h3>
           <div className={styles.sub}>{role.meta}</div>
-          <div className={styles.team}>
-            <span className={styles.teamLabel}>{role.teamLabel}</span>
-            {role.team}
-          </div>
+          <RoleMetaLine label={role.teamLabel} value={role.team} />
         </div>
 
         <div className={styles.tags}>

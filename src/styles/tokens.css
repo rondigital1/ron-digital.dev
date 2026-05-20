@@ -1,30 +1,41 @@
 /* ============================================================
-   Design tokens — warm editorial cream, black, and burgundy.
+   Design tokens — warm editorial stone, parchment, and burgundy.
    ============================================================ */
 :root {
+  /* Core palette */
+  --page-bg: #f8f3ea;
+  --card-bg: #efe6d8;
+  --card-bg-soft: #f6f0e6;
+  --border-color: #2a241f;
+  --text: #171412;
+  --muted-text: #6f665b;
+  --accent-burgundy: #7a1830;
+  --accent-soft: #ead4da;
+  --accent-soft-bg: var(--accent-soft);
+
   /* Page surfaces */
-  --bg: #f4efe6;
-  --bg-soft: #faf6ee;
+  --bg: var(--page-bg);
+  --bg-soft: var(--card-bg-soft);
 
   /* Ink / text */
-  --ink: #151413;
-  --ink-soft: #38322c;
-  --muted: #776e65;
+  --ink: var(--text);
+  --ink-soft: #332d27;
+  --muted: var(--muted-text);
   --muted-strong: #5f574f;
 
   /* Borders */
-  --line: #24201b;
-  --line-soft: rgba(36, 32, 27, 0.28);
+  --line: var(--border-color);
+  --line-soft: rgba(42, 36, 31, 0.28);
 
   /* Panels */
-  --panel: #eadfc9;
-  --panel-soft: #f1e8d7;
-  --panel-cream: #f8f3ea;
+  --panel: var(--card-bg);
+  --panel-soft: var(--card-bg-soft);
+  --panel-cream: var(--page-bg);
 
   /* Burgundy accent */
-  --maroon: #5f1325;
-  --maroon-strong: #6f182d;
-  --maroon-soft: #f0dce1;
+  --maroon: var(--accent-burgundy);
+  --maroon-strong: var(--accent-burgundy);
+  --maroon-soft: var(--accent-soft-bg);
 
   /* Deep panels */
   --black-panel: #11110f;
@@ -38,10 +49,10 @@
   --stock-3: var(--panel-soft);
   --card: var(--panel);
   --card-2: var(--panel-soft);
-  --card-3: var(--panel-cream);
+  --card-3: var(--card-bg-soft);
   --ink-2: var(--ink-soft);
   --rule: var(--line-soft);
-  --rule-soft: rgba(36, 32, 27, 0.16);
+  --rule-soft: rgba(42, 36, 31, 0.16);
   --accent: var(--maroon);
   --accent-2: var(--maroon-strong);
   --accent-bg: var(--maroon-soft);

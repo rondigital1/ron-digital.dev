@@ -1,4 +1,4 @@
-/* Experience role card — year, company logo, role info + team banner,
+/* Experience role card — year, company logo, role info + metadata,
    tags, bullets, stack. */
 .card {
   padding: clamp(1.25rem, 2.5vw, 2rem);
@@ -82,32 +82,6 @@
   margin-top: 0.55rem;
 }
 
-/* Team banner — emphasised */
-.team {
-  margin-top: 0.7rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.4rem 0.75rem 0.4rem 0.6rem;
-  background: var(--accent-bg);
-  border-left: 3px solid var(--accent);
-  font-family: var(--mono);
-  font-size: var(--t-xs);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
-}
-.teamLabel {
-  color: var(--muted);
-  font-weight: 500;
-}
-.teamLabel::after {
-  content: '·';
-  margin-left: 0.55rem;
-  opacity: 0.5;
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -122,11 +96,12 @@
   text-transform: uppercase;
   padding: 0.3rem 0.6rem;
   border: 1px solid var(--line-soft);
-  background: var(--stock);
+  background: transparent;
+  color: var(--muted);
 }
 .tagCurrent {
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: transparent;
+  color: var(--accent);
   border-color: var(--accent);
 }
 
@@ -141,7 +116,7 @@
   min-width: 0;
   padding: 0.75rem 0.8rem 0.7rem;
   border: 1px solid var(--line-soft);
-  background: var(--stock);
+  background: var(--card-2);
   display: grid;
   gap: 0.18rem;
   align-content: start;

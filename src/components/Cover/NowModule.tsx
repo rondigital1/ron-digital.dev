@@ -3,26 +3,26 @@ import styles from './NowModule.module.css';
 const roleFitRows = [
   {
     num: '01',
-    title: 'Backend-heavy product engineering',
-    desc: 'Node/TypeScript services, APIs, background jobs, ledgers, and data workflows.',
+    title: 'Backend product systems',
+    desc: 'Node/TypeScript services, APIs, payments, ledgers, background jobs, and data-intensive workflows.',
     isTarget: false,
   },
   {
     num: '02',
-    title: 'Distributed systems & reliability',
-    desc: 'Queues, retries, failure modes, observability, and production ownership.',
+    title: 'Distributed reliability',
+    desc: 'Event-driven architecture, queues, retries, failure modes, observability, and production ownership.',
     isTarget: false,
   },
   {
     num: '03',
-    title: 'AI-native application engineering',
-    desc: 'LangGraph/LangChain workflows, MCP, structured outputs, and agent handoffs.',
+    title: 'AI-native product engineering',
+    desc: 'LangGraph/LangChain agents, structured outputs, orchestration, evaluation loops, and human approval workflows.',
     isTarget: false,
   },
   {
     num: '04',
-    title: 'Looking for',
-    desc: 'Senior SWE / AI Product Engineer roles on small, high-ownership product teams.',
+    title: 'Seeking',
+    desc: 'Senior SWE, Backend, Full-Stack, or AI-native product roles at small, ambitious, high-ownership teams.',
     isTarget: true,
   },
 ];

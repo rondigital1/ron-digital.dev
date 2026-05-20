@@ -67,13 +67,18 @@ export const experience: Role[] = [
     impactMetrics: [
       {
         value: '3',
-        label: '0→1 AI prototypes',
-        context: 'full-stack product builds',
+        label: '0→1 AI products',
+        context: 'scope, architecture, APIs, UI',
       },
       {
         value: 'LangGraph',
-        label: 'agent workflows',
-        context: 'structured outputs + orchestration',
+        label: 'LLM orchestration',
+        context: 'structured outputs + agent workflows',
+      },
+      {
+        value: 'Context',
+        label: 'persistence model',
+        context: 'planning state, revisions, outputs',
       },
     ],
     bullets: [
@@ -138,18 +143,18 @@ export const experience: Role[] = [
     impactMetrics: [
       {
         value: '$40K+',
-        label: 'orphaned funds recovered',
-        context: 'within one week',
+        label: 'funds recovered',
+        context: 'orphaned customer money within one week',
       },
       {
-        value: '−90%',
-        label: 'refund exceptions',
+        value: '~90%',
+        label: 'exceptions reduced',
         context: 'refund matching + reconciliation redesign',
       },
       {
-        value: 'ACH · Wire',
-        label: 'fund movement',
-        context: 'regulated fintech workflows',
+        value: 'ACH/Wire',
+        label: 'payment rails owned',
+        context: 'audit-ready regulated fund movement',
       },
     ],
     bullets: [
@@ -220,24 +225,24 @@ export const experience: Role[] = [
     tags: ['Distributed', 'Serverless', 'Event-Driven'],
     impactMetrics: [
       {
-        value: '2.5M+ / day',
-        label: 'Lambda + SQS jobs',
-        context: 'event-driven backend throughput',
+        value: '2.5M+',
+        label: 'jobs per day',
+        context: 'Lambda + SQS background processing',
       },
       {
-        value: '400K+ / day',
-        label: 'real-time messages',
+        value: '400K+',
+        label: 'messages per day',
         context: 'Springbig messaging workload',
       },
       {
-        value: 'Event-driven',
-        label: 'microservice architecture',
-        context: 'complex market + messaging workflows',
+        value: '4',
+        label: 'Lambda services split out',
+        context: 'single-responsibility monolith decomposition',
       },
       {
-        value: '0-DLQ',
-        label: 'steady state',
-        context: 'CloudWatch + SNS observability',
+        value: 'Zero DLQ',
+        label: 'steady state reached',
+        context: 'CloudWatch, SNS, and DLQ monitoring',
       },
     ],
     bullets: [
@@ -297,20 +302,29 @@ export const experience: Role[] = [
     role: 'Software Engineer, Secure Messaging',
     roleEmphasis: 'Secure Messaging',
     meta: 'Secure Collaboration · Encrypted Communications · New York, NY',
-    team: 'Bots / Chatbots',
+    team: 'Chatbots / Integrations',
     teamLabel: 'Team',
     start: 'Aug 2017',
     end: 'Aug 2019',
     yearStart: '2017',
     yearEnd: '2019',
     tags: ['Secure Messaging', 'Bots', 'Acquired'],
-    proofChips: [
-      'Node.js chatbot services',
-      'Modular bot framework',
-      'Node.js ↔ C++ SDK bridge',
-      'REST APIs',
-      'Dockerized services',
-      'Third-party API integrations',
+    impactMetrics: [
+      {
+        value: 'Node.js',
+        label: 'chatbot services',
+        context: 'secure messaging workflows',
+      },
+      {
+        value: 'Framework',
+        label: 'shared bot primitives',
+        context: 'routing, orchestration, deployment',
+      },
+      {
+        value: 'C++ SDK',
+        label: 'JavaScript bridge',
+        context: 'native messaging capabilities exposed',
+      },
     ],
     bullets: [
       [

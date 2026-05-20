@@ -19,7 +19,7 @@ export function EducationSection() {
             : `${entry.degree} `;
 
           return (
-            <BentoCell key={entry.id} as="article" tone="beige" className={styles.card}>
+            <BentoCell key={entry.id} as="article" tone="beige" interactive className={styles.card}>
               <div className={styles.badge} aria-hidden>
                 {entry.monogram}
               </div>

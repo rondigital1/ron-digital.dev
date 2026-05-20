@@ -57,7 +57,7 @@
   align-items: center;
   padding: 0.7rem 0.85rem;
   border: 1px solid var(--line-soft);
-  background: var(--stock);
+  background: var(--card-2);
   transition:
     transform var(--dur) var(--ease),
     box-shadow var(--dur) var(--ease);

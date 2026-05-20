@@ -52,13 +52,13 @@
   background: var(--card-3);
 }
 .traffic i:nth-child(3) {
-  background: var(--stock);
+  background: var(--card-2);
 }
 .url {
   font-family: var(--mono);
   font-size: var(--t-xs);
   color: var(--ink-2);
-  background: var(--stock);
+  background: var(--card-2);
   border: 1px solid var(--line-soft);
   border-radius: 3px;
   padding: 3px 9px;

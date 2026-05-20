@@ -35,9 +35,9 @@
   border-color: var(--accent);
 }
 .ink .badge {
-  background: var(--stock);
+  background: var(--card-2);
   color: var(--ink);
-  border-color: var(--stock);
+  border-color: var(--card-2);
 }
 .accent .badge {
   background: var(--accent-ink);
@@ -110,9 +110,9 @@
   transform: translateY(-2px);
 }
 .ink .tool:hover {
-  background: var(--stock);
+  background: var(--card-2);
   color: var(--ink);
-  border-color: var(--stock);
+  border-color: var(--card-2);
   transform: translateY(-2px);
 }
 .accent .tool:hover {

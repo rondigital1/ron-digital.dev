@@ -110,7 +110,7 @@
   align-content: start;
 }
 .flashcard {
-  background: var(--white);
+  background: var(--card-2);
   border: 1px solid var(--line-soft);
   border-radius: 3px;
   padding: 0.6rem;
@@ -186,7 +186,7 @@
   align-content: start;
 }
 .pilotCol {
-  background: var(--white);
+  background: var(--card-2);
   border: 1px solid var(--line-soft);
   border-radius: 3px;
   padding: 0.6rem;

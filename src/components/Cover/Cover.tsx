@@ -26,7 +26,7 @@ export function Cover() {
       </div>
 
       <aside className={styles.right}>
-        <BentoCell tone="ink" className={styles.yearsCard}>
+        <BentoCell tone="ink" interactive className={styles.yearsCard}>
           <span className={styles.yearsNum}>
             <em>{profile.yearsExperience}</em>+
           </span>

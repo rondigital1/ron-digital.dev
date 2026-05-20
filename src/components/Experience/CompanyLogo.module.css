@@ -4,7 +4,7 @@
   width: clamp(56px, 8vw, 72px);
   height: clamp(56px, 8vw, 72px);
   border: 1px solid var(--line-soft);
-  background: var(--stock);
+  background: var(--card-2);
   display: grid;
   place-items: center;
   overflow: hidden;
