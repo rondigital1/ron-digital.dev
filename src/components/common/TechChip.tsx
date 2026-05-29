@@ -1,3 +1,4 @@
+import { createElement } from 'react';
 import { getIcon } from '../../lib/icons';
 import styles from './TechChip.module.css';
 
@@ -21,7 +22,7 @@ export function TechChip({ name, on = 'beige', size = 'sm' }: TechChipProps) {
   const Icon = getIcon(name);
   return (
     <span className={`${styles.chip} ${styles[size]} ${toneClass[on]}`}>
-      <Icon className={styles.icon} aria-hidden />
+      {createElement(Icon, { className: styles.icon, 'aria-hidden': true })}
       {name}
     </span>
   );

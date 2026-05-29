@@ -42,6 +42,34 @@ export function ProjectPreview({ kind }: { kind: PreviewKind }) {
     );
   }
 
+  if (kind === 'tooling') {
+    return (
+      <div className={`${styles.preview} ${styles.tooling}`} aria-hidden>
+        <div className={styles.toolingRail}>
+          {['repo', 'patch', 'tests'].map((label) => (
+            <span key={label}>{label}</span>
+          ))}
+        </div>
+        <div className={styles.toolingMain}>
+          <div className={styles.toolingPrompt}>
+            <span className={styles.promptDot} />
+            <span>codex skill</span>
+          </div>
+          <div className={styles.toolingFlow}>
+            {[0, 1, 2, 3].map((i) => (
+              <span key={i} />
+            ))}
+          </div>
+          <div className={styles.toolingChecks}>
+            {[0, 1, 2].map((i) => (
+              <span key={i} />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // pilot
   return (
     <div className={`${styles.preview} ${styles.pilot}`} aria-hidden>

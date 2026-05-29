@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import { createElement, type CSSProperties } from 'react';
 import type { SkillGroup } from '../../data';
 import { BentoCell } from '../common/BentoCell';
 import { getIcon } from '../../lib/icons';
@@ -30,7 +30,7 @@ export function SkillBentoCard({ group, style }: SkillBentoCardProps) {
           const Icon = getIcon(item.name);
           return (
             <div className={styles.tool} key={item.name}>
-              <Icon className={styles.icon} aria-hidden />
+              {createElement(Icon, { className: styles.icon, 'aria-hidden': true })}
               <span className={styles.toolInfo}>
                 <span className={styles.toolName}>{item.name}</span>
                 <span className={styles.toolLevel}>{item.level}</span>

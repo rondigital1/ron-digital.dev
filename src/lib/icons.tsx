@@ -25,6 +25,8 @@ import {
   SiAnthropic,
   SiCplusplus,
   SiGraphql,
+  SiOpenai,
+  SiPython,
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa6';
 import {
@@ -36,13 +38,14 @@ import {
   TbCloudComputing,
   TbStack2,
   TbRefresh,
-  TbBrandSpeedtest,
   TbRouteSquare,
   TbCpu,
   TbMessages,
   TbListCheck,
   TbInfinity,
   TbCode,
+  TbBrain,
+  TbTools,
 } from 'react-icons/tb';
 
 export type IconComponent = ComponentType<{ className?: string; 'aria-hidden'?: boolean }>;
@@ -57,6 +60,7 @@ const REGISTRY: Record<string, IconEntry> = {
   // Languages
   TypeScript: { Icon: SiTypescript, color: '#3178C6' },
   JavaScript: { Icon: SiJavascript, color: '#F7DF1E' },
+  Python: { Icon: SiPython, color: '#3776AB' },
   SQL: { Icon: TbDatabase },
   Ruby: { Icon: SiRuby, color: '#CC342D' },
   'C++': { Icon: SiCplusplus, color: '#00599C' },
@@ -84,6 +88,8 @@ const REGISTRY: Record<string, IconEntry> = {
   'Structured Outputs': { Icon: TbCode },
   'Context Design': { Icon: TbBinaryTree },
   'Agentic Workflows': { Icon: TbRouteSquare },
+  'AI Engineering': { Icon: TbBrain },
+  Codex: { Icon: SiOpenai },
   Claude: { Icon: SiAnthropic },
 
   // Cloud / distributed
@@ -114,6 +120,7 @@ const REGISTRY: Record<string, IconEntry> = {
   Datadog: { Icon: SiDatadog, color: '#632CA6' },
   CloudWatch: { Icon: FaAws, color: '#FF9900' },
   Docker: { Icon: SiDocker, color: '#2496ED' },
+  'Developer Tools': { Icon: TbTools },
   CodePipeline: { Icon: FaAws, color: '#FF9900' },
   'CI/CD': { Icon: TbInfinity },
 };
@@ -127,5 +134,3 @@ export function getIcon(name: string): IconComponent {
 export function getIconColor(name: string): string | undefined {
   return REGISTRY[name]?.color;
 }
-
-export { TbBrandSpeedtest };

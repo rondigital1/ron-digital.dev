@@ -1,4 +1,4 @@
-export type PreviewKind = 'atlas' | 'vault' | 'pilot';
+export type PreviewKind = 'atlas' | 'vault' | 'pilot' | 'tooling';
 export type ProjectStatus = 'live' | 'prototype' | 'building' | 'paused';
 
 export interface ProjectLinks {
@@ -69,5 +69,23 @@ export const projects: Project[] = [
       github: 'https://github.com/rondigital1/session-pilot',
     },
     stack: ['TypeScript', 'React', 'Node.js', 'PostgreSQL'],
+  },
+];
+
+export const developerTools: Project[] = [
+  {
+    id: 'codex-engineering-skills',
+    name: 'Codex Engineering Skills',
+    nameEmphasis: 'Skills',
+    tag: 'AI engineering · Codex workflows',
+    description:
+      'A versioned set of reusable Codex skills that encode repo-grounded analysis, narrow implementation paths, explicit validation, and review-risk awareness for AI-assisted software work.',
+    preview: 'tooling',
+    urlLabel: 'github.com/rondigital1/codex-engineering-skills',
+    status: 'building',
+    links: {
+      github: 'https://github.com/rondigital1/codex-engineering-skills',
+    },
+    stack: ['Python', 'Codex', 'AI Engineering', 'Developer Tools'],
   },
 ];

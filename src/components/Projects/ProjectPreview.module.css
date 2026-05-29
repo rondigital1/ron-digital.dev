@@ -216,6 +216,112 @@
   width: 58%;
 }
 
+/* ============ TOOLING — Codex skill workflow ============ */
+.tooling {
+  background: var(--black-panel-soft);
+  color: var(--panel);
+  display: grid;
+  grid-template-columns: minmax(84px, 0.3fr) 1fr;
+  gap: 0.85rem;
+  padding: 1.05rem;
+}
+
+.toolingRail {
+  border: 1px solid rgba(255, 250, 241, 0.18);
+  background: rgba(255, 250, 241, 0.06);
+  padding: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.toolingRail span {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255, 250, 241, 0.7);
+  border-bottom: 1px solid rgba(255, 250, 241, 0.14);
+  padding-bottom: 0.4rem;
+}
+
+.toolingMain {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.toolingPrompt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 250, 241, 0.74);
+}
+
+.promptDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-2);
+}
+
+.toolingFlow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.toolingFlow span {
+  min-height: 72px;
+  border: 1px solid rgba(255, 250, 241, 0.18);
+  background: rgba(255, 250, 241, 0.08);
+  position: relative;
+}
+
+.toolingFlow span::before,
+.toolingFlow span::after {
+  content: '';
+  position: absolute;
+  left: 0.55rem;
+  right: 0.55rem;
+  height: 6px;
+  border-radius: 2px;
+  background: rgba(255, 250, 241, 0.26);
+}
+
+.toolingFlow span::before {
+  top: 0.8rem;
+}
+
+.toolingFlow span::after {
+  top: 1.35rem;
+  right: 1.4rem;
+}
+
+.toolingFlow span:nth-child(2),
+.toolingFlow span:nth-child(3) {
+  border-color: var(--accent-2);
+}
+
+.toolingChecks {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.toolingChecks span {
+  width: 42px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent-2);
+  opacity: 0.82;
+}
+
 @container (max-width: 30rem) {
   .preview {
     height: clamp(150px, 46vw, 190px);
@@ -257,6 +363,29 @@
   .pilotCol .stat {
     font-size: 1.35rem;
   }
+
+  .tooling {
+    grid-template-columns: 1fr;
+    padding: 0.85rem;
+  }
+
+  .toolingRail {
+    flex-direction: row;
+    padding: 0.55rem;
+  }
+
+  .toolingRail span {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .toolingFlow {
+    gap: 0.45rem;
+  }
+
+  .toolingFlow span {
+    min-height: 58px;
+  }
 }
 
 @container (max-width: 23rem) {
@@ -279,5 +408,17 @@
   .pilotBody {
     grid-template-columns: repeat(3, minmax(64px, 1fr));
     padding: 0.7rem;
+  }
+
+  .toolingRail {
+    display: none;
+  }
+
+  .toolingFlow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .toolingChecks span {
+    width: 34px;
   }
 }
